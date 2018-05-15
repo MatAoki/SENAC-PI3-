@@ -59,7 +59,13 @@ public class Game extends JPanel {
 		while (true) {
 			game.move();
 			game.repaint();
+                        game.colisao();
 			Thread.sleep(10);
 		}
 	}
+        
+        public void colisao(){
+            if (ball.colidiu(racquet,ball))
+                racquet.vivo = false;
+        }
 }

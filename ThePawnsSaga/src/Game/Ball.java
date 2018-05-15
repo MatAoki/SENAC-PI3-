@@ -38,5 +38,18 @@ public class Ball {
 
 	public void paint(Graphics2D g) {
 		g.fillOval(x, y, 30, 30);
+                /*
+                g.fillOval(x+30, y, 5, 5);
+                g.fillOval(x-30, y, 5, 5);
+                g.fillOval(x, y-30, 5, 5);
+                g.fillOval(x, y+30, 5, 5);
+                */
 	}
+        
+        public boolean colidiu(Racquet player, Ball inimigo){
+            if (player.x + 50 > inimigo.x && player.x - 50 < inimigo.x)
+                if (player.y + 45 > inimigo.y && player.y - 45 < inimigo.y)
+                    return true;
+            return false;
+        }
 }

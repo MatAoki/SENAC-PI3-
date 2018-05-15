@@ -13,6 +13,7 @@ public class Racquet {
 	int xa = 0;
         int y = 370;
 	int ya = 0;
+        boolean vivo = true;
         
 	private Game game;
 
@@ -28,7 +29,15 @@ public class Racquet {
 	}
 
 	public void paint(Graphics2D g) {
-		g.fillRect(x, y, 60, 60);
+            if (vivo){
+		g.fillRect(x, y, 50, 50);
+                /*
+                g.fillRect(x+50, y, 10, 10);
+                g.fillRect(x-50, y, 10, 10);
+                g.fillRect(x, y-50, 10, 10);
+                g.fillRect(x, y+50, 10, 10);
+                */
+            }
 	}
 
 	public void keyReleased(KeyEvent e) {
@@ -47,6 +56,9 @@ public class Racquet {
             if (e.getKeyCode() == KeyEvent.VK_DOWN){
                 if (ya>0)
                     ya = 0;
+            }
+            if (e.getKeyCode() == KeyEvent.VK_F5){
+                this.vivo = true;
             }
 	}
 
